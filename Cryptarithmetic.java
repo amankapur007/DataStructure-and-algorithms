@@ -14,6 +14,7 @@ public class Cryptarthmetic {
 		String arr[] = { "B", "A", "S", "E", "L", "G", "M" };
 
 		String arrNo[] = { "", "", "", "", "", "", "", "", "", "" };
+		//int arrNo[] = { -1, -1, -1, -1, -1, -1, -1, -1, -1, -1 };
 		HashMap<String, Integer> map = new HashMap<>();
 		/*
 		 * map.put("S", -1); 
@@ -57,6 +58,7 @@ public class Cryptarthmetic {
 				s2 = s2.replace(arr[index], digit + "");
 				s3 = s3.replace(arr[index], digit + "");
 				//map.put(arr[index], digit);
+				//arrNo[digit] = 1;
 				arrNo[digit] = arr[index];
 				assigned = assigned + 1;
 				if (start(s1, s2, s3, map, arr, index + 1, arrNo)) {
@@ -66,6 +68,7 @@ public class Cryptarthmetic {
 					s2 = s2.replace(digit + "", arr[index]);
 					s3 = s3.replace(digit + "", arr[index]);
 					assigned = assigned - 1;
+					//arrNo[digit] = -1;
 					arrNo[digit] = "";
 					//map.put(arr[index], -1);
 				}
@@ -77,6 +80,7 @@ public class Cryptarthmetic {
 
 	private static boolean checkIfDigitToLetterAssign(int digit, String[] arrNo) {
 		// TODO Auto-generated method stub
+		//if(arrNo == -1) {
 		if (arrNo[digit].equals("")) {
 			return true;
 		}
