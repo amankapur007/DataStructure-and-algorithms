@@ -1,6 +1,6 @@
-package stack;
+package com.aman.stack.array;
 
-public class MyStack {
+public class App {
     public static void main(String[] args) {
         Stack stack = new Stack();
         stack.push(1);

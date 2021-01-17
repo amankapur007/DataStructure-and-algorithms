@@ -1,7 +1,5 @@
 package com.aman.doublylinkedlist;
 
-import com.aman.doublylinkedlist.Node;
-
 public class LinkedList<T extends Comparable<T>> implements List<T> {
 
     private Node<T> root;

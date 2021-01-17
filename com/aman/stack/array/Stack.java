@@ -1,4 +1,4 @@
-package stack;
+package com.aman.stack.array;
 
 /**
  * Last In First Out
