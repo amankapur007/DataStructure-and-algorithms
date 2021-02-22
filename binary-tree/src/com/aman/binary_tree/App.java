@@ -10,6 +10,11 @@ public class App {
         bst.insert(40);
         bst.insert(60);
         bst.insert(80);
+        bst.inOrder();
+        bst.preOrder();
+        bst.postOrder();
+        bst.levelOrder();
+        System.out.println("----------");
         bst.display();
         System.out.println("----------");
         bst.delete(20);
@@ -20,5 +25,7 @@ public class App {
         System.out.println("----------");
         bst.delete(50);
         bst.display();
+        System.out.println("Height");
+        System.out.println(bst.height());
     }
 }

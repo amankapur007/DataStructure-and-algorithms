@@ -1,5 +1,9 @@
 package com.aman.binary_tree;
 
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Stack;
+
 /**
  * Node
  */
@@ -128,5 +132,64 @@ public class BinaryTree {
         display(node.rChild);
     }
 
+    public void inOrder(){
+        System.out.println("In Order");
+        inOrder(this.root);
+        System.out.println();
+    }
 
+    private void inOrder(Node node) {
+        if(node == null)return;
+        inOrder(node.lChild);
+        System.out.print(node.data+" ");
+        inOrder(node.rChild);
+    }
+
+    public void preOrder(){
+        System.out.println("Pre Order");
+        preOrder(this.root);
+        System.out.println();
+    }
+
+    private void preOrder(Node node) {
+        if(node == null)return;
+        System.out.print(node.data+" ");
+        preOrder(node.lChild);
+        preOrder(node.rChild);
+    }
+
+    public void postOrder(){
+        System.out.println("Post Order");
+        postOrder(this.root);
+        System.out.println();
+    }
+
+    private void postOrder(Node node) {
+        if(node == null)return;
+        postOrder(node.lChild);
+        postOrder(node.rChild);
+        System.out.print(node.data+" ");
+    }
+
+    public  void levelOrder(){
+        System.out.println("Level Order");
+        Queue <Node> queue = new LinkedList <>();
+        if(this.root!=null){queue.add(this.root);}
+        levelOrder(queue);
+        System.out.println();
+    }
+
+    private void levelOrder(Queue<Node> queue) {
+        if (!queue.isEmpty()) {
+            Node temp = queue.remove();
+            System.out.print(temp.data+" ");
+            if(temp.lChild!=null){queue.add(temp.lChild);}
+            if(temp.rChild!=null){queue.add(temp.rChild);}
+            levelOrder(queue);
+        }
+    }
+
+    public int height(){
+        return height(this.root);
+    }
 }
